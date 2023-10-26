@@ -30,10 +30,60 @@ img {
     max-width: 100%;
 }
 
+figure > img {
+    display: block;
+}
+
 :root {
     --light-gray: #EAEAEA;
     --light: #FFFFFF;
     --blue-green: #009688;
+}
+
+/* Utility classes */
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* sidebar */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.user-profile {
+    background-color: var(--light-gray);
+    justify-content: space-between;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.user-profile-photo > img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.serving {
+    background-color: var(--light-gray);
+}
+
+.serving-icon {
+    width: 40px;
+    display: flex;
+    background-color: var(--light);
+    height: 100%;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
 }
 
 /* debugs */
