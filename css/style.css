@@ -1,3 +1,64 @@
 html {
     font-family: 'Open Sans', sans-serif;
 }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* .app-container {
+    height: 100vh;
+} */
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+    /* height: 100vh; */
+    display: flex;
+
+}
+
+ul,
+ol,
+menu {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+:root {
+    --light-gray: #EAEAEA;
+    --light: #FFFFFF;
+    --blue-green: #009688;
+}
+
+/* debugs */
+
+.debug .app-container {
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px ;
+    /* height: 100px; */
+}
+
+.debug .container {
+    border: 1px solid red;
+    /* background-color: gray; */
+    height: 200px;
+    padding: 20px;
+}
+
+.debug .sidebar {
+    border: 1px solid blue;
+    width: 300px;
+
+}
+
+.debug .main-chat {
+    border: 1px solid green;
+    flex-grow: 1;
+}
