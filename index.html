@@ -35,9 +35,6 @@
                     <div>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
-
-
-
                 </div>
                 <div class="serving sidebar-item">
                     <div class="serving-icon">
@@ -51,8 +48,32 @@
                             Lorem ipsum dolor sit amet.
                         </p>
                     </div>
-
                 </div>
+                <div class="contacts-searchbar sidebar-item">
+                    <button class="chats-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat!">
+                </div>
+                <ul class="contacts-list">
+                    <li class="sidebar-item" v-for="(contact, index) in contacts">
+                        <div class="d-flex">
+                            <figure class="user-profile-photo">
+                                <img :src="contact.avatar" alt="">
+                            </figure>
+                            <div>
+                                <p>
+                                    {{contact.name}}
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur.
+                                </p>
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
 
             </aside>
             <div class="main-chat">
