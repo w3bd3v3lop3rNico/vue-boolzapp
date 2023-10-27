@@ -81,11 +81,11 @@
                 <aside class="sidebar-chat">
                     <div class="current-contact">
                         <figure class="user-profile-photo">
-                            <img src="./img/avatar_1.jpg" alt="">
+                            <img :src="contacts[currentIndex].avatar" alt="">
                         </figure>
                         <div>
                             <p>
-                                Michele
+                                {{ contacts[currentIndex].name }}
                             </p>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur.
@@ -99,12 +99,13 @@
                     </div>
                 </aside>
                 <div class="main-chat-container">
-                    <div class="user-message sent">
-                        <p>ciao</p>
+                    <div class="user-message" 
+                    :class="message.status === 'sent' ? 'sent' : 'received'"
+                    v-for="(message, index) in contacts[currentIndex].messages">
+                        <p>{{ message.message }}</p>
+                        <p>{{ message.date }}</p>
                     </div>
-                    <div class="user-message received">
-                        ciao
-                    </div>
+                    
                 </div>
                 <div class="type-in-message-bar">
                     <div class="emoji">
