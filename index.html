@@ -112,9 +112,11 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="type-in-message-area">
-                        <input type="text" placeholder="Scrivi messaggio">
+                        <input type="text" placeholder="Scrivi messaggio" v-model="newMessage.message"
+                        @keyup.enter="sendNewMessage()"
+                        >
                     </div>
-                    <div class="rec-microphone">
+                    <div class="rec-microphone" >
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>

@@ -5,6 +5,11 @@ createApp({
         return {
             userName: 'Nicola',
             currentIndex: 0,
+            newMessage: {
+                date: 'data a caso',
+                message: '',
+                status: 'sent',
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -174,6 +179,11 @@ createApp({
         changeChat(chatIndex) {
             console.log(chatIndex);
             this.currentIndex = chatIndex;
+        },
+        sendNewMessage() {
+            const newMessage = this.newMessage
+            console.log(newMessage)
+            this.contacts[this.currentIndex].messages.push(newMessage)
         }
     },
     mounted() {
