@@ -5,11 +5,17 @@ createApp({
         return {
             userName: 'Nicola',
             currentIndex: 0,
+            newReceivedMessageTemplate: {
+                date: 'data a caso',
+                message: 'ok',
+                status: 'received',
+            },
             newMessage: {
                 date: 'data a caso',
                 message: '',
                 status: 'sent',
             },
+            contactsFiltered: [],
             contacts: [
                 {
                     name: 'Michele',
@@ -181,12 +187,19 @@ createApp({
             this.currentIndex = chatIndex;
         },
         sendNewMessage() {
-            const newMessage = this.newMessage
-            console.log(newMessage)
-            this.contacts[this.currentIndex].messages.push(newMessage)
+            const newMessage = this.newMessage;
+            console.log(newMessage);
+            this.contacts[this.currentIndex].messages.push(newMessage);
+            setTimeout(() => {
+                this.reciveNewMessage();
+            }, 1000);
+        },
+        reciveNewMessage() {
+            const newReceivedMessage = { ...this.newReceivedMessageTemplate };
+            this.contacts[this.currentIndex].messages.push(newReceivedMessage);
         }
     },
     mounted() {
-        
+
     },
 }).mount('#app');
