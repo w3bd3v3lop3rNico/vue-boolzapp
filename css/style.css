@@ -8,14 +8,15 @@ html {
     box-sizing: border-box;
 }
 
-/* .app-container {
+.app-container {
     height: 100vh;
-} */
+    padding-top: 30px;
+}
 
 .container {
     width: 800px;
     margin: 0 auto;
-    /* height: 100vh; */
+    height: 900px;
     display: flex;
 
 }
@@ -38,6 +39,7 @@ figure > img {
     --light-gray: #EAEAEA;
     --light: #FFFFFF;
     --blue-green: #009688;
+    --light-green: #CFF6B1;
 }
 
 /* Utility classes */
@@ -96,28 +98,87 @@ figure > img {
     line-height: 30px;
 }
 
+
+
+/* main chat */
+
+/* sidebar main chat */
+
+.main-chat-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-chat {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: gray;
+}
+
+.current-contact {
+    display: flex;
+    align-items: center;
+}
+
+.side-chat-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* main chat body */
+
+.main-chat-container {
+    background-image: url(../img/mine.jpg);
+    flex-grow: 1;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.user-message {
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 25%;
+}
+
+.sent {
+    background-color: var(--light-green);
+    align-self: flex-end;
+}
+
+.received {
+    background-color: var(--light);
+    align-self: flex-start;
+}
+
+
+
 /* debugs */
 
-.debug .app-container {
+/* .debug .app-container {
     border: 1px solid black;
     margin: 20px;
     padding: 20px ;
-    /* height: 100px; */
-}
+    height: 100px;
+} */
 
-.debug .container {
+/* .debug .container {
     border: 1px solid red;
-    /* background-color: gray; */
+     background-color: gray; 
     padding: 20px;
-}
-
-.debug .sidebar {
+} 
+*/
+/* .debug .sidebar {
     border: 1px solid blue;
     width: 300px;
 
-}
+} */
 
-.debug .main-chat {
+/* .debug .main-chat {
     border: 1px solid green;
-    flex-grow: 1;
-}
+    
+} */
