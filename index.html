@@ -29,7 +29,7 @@
                             <img src="./img/avatar_1.jpg" alt="">
                         </figure>
                         <p>
-                            Nicola
+                            {{ userName }}
                         </p>
                     </div>
                     <div>
@@ -56,7 +56,10 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat!">
                 </div>
                 <ul class="contacts-list">
-                    <li class="sidebar-item" v-for="(contact, index) in contacts">
+                    <li class="sidebar-item"
+                    :class="index === currentIndex ? 'active' : ''" 
+                    @click="changeChat(index)"
+                    v-for="(contact, index) in contacts" :key="index">
                         <div class="d-flex">
                             <figure class="user-profile-photo">
                                 <img :src="contact.avatar" alt="">
@@ -69,10 +72,8 @@
                                     Lorem ipsum dolor sit amet consectetur.
                                 </p>
                             </div>
-
                         </div>
                     </li>
-
                 </ul>
 
             </aside>
@@ -104,7 +105,17 @@
                     <div class="user-message received">
                         ciao
                     </div>
-
+                </div>
+                <div class="type-in-message-bar">
+                    <div class="emoji">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <div class="type-in-message-area">
+                        <input type="text" placeholder="Scrivi messaggio">
+                    </div>
+                    <div class="rec-microphone">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
                 </div>
             </div>
         </main>
