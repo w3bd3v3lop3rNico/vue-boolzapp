@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            searchName: '',
             userName: 'Nicola',
             currentIndex: 0,
             newReceivedMessageTemplate: {
@@ -197,7 +198,13 @@ createApp({
         reciveNewMessage() {
             const newReceivedMessage = { ...this.newReceivedMessageTemplate };
             this.contacts[this.currentIndex].messages.push(newReceivedMessage);
-        }
+        },
+        getContacts() {
+            for(let i = 0; i < this.contacts.length; i++)
+                if (this.contacts[i].name.includes(toLowecase(this.searchName))) {
+                    this.contactsFiltered.push(this.contacts[i])
+                } 
+        },
     },
     mounted() {
 

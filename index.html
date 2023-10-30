@@ -53,9 +53,31 @@
                     <button class="chats-btn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat!">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat!"
+                    v-model="searchName">
                 </div>
-                <ul class="contacts-list">
+                <ul class="contacts-list" v-if="searchName !== ''">
+                    <li class="sidebar-item"
+                    :class="index === currentIndex ? 'active' : ''" 
+                    @click="changeChat(index)"
+                    v-for="(contact, index) in contactsFiltered" :key="index">
+                        <div class="d-flex">
+                            <figure class="user-profile-photo">
+                                <img :src="contact.avatar" alt="">
+                            </figure>
+                            <div>
+                                <p>
+                                    {{contact.name}}
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </ul>
+                <ul class="contacts-list" v-else>
                     <li class="sidebar-item"
                     :class="index === currentIndex ? 'active' : ''" 
                     @click="changeChat(index)"
@@ -74,8 +96,8 @@
                             </div>
                         </div>
                     </li>
+                    
                 </ul>
-
             </aside>
             <div class="main-chat-section">
                 <aside class="sidebar-chat">
