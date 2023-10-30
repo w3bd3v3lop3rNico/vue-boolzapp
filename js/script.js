@@ -7,12 +7,12 @@ createApp({
             userName: 'Nicola',
             currentIndex: 0,
             newReceivedMessageTemplate: {
-                date: 'data a caso',
+                date: '',
                 message: 'ok',
                 status: 'received',
             },
             newMessage: {
-                date: 'data a caso',
+                date: '',
                 message: '',
                 status: 'sent',
             },
@@ -189,7 +189,9 @@ createApp({
         },
         sendNewMessage() {
             const newMessage = this.newMessage;
-            console.log(newMessage);
+            let newMessageDate = this.newMessage.date
+            newMessageDate = toString(new Date.now)
+            console.log(newMessageDate)
             this.contacts[this.currentIndex].messages.push(newMessage);
             setTimeout(() => {
                 this.reciveNewMessage();
@@ -199,12 +201,17 @@ createApp({
             const newReceivedMessage = { ...this.newReceivedMessageTemplate };
             this.contacts[this.currentIndex].messages.push(newReceivedMessage);
         },
-        getContacts() {
-            for(let i = 0; i < this.contacts.length; i++)
-                if (this.contacts[i].name.includes(toLowecase(this.searchName))) {
-                    this.contactsFiltered.push(this.contacts[i])
-                } 
-        },
+        // getContacts() {
+        //     for(let i = 0; i < this.contacts.length; i++) {
+        //         const contact = this.contacts[i]
+        //         console.log(contact)
+                
+        //         if (this.contacts[i].name.includes(toLowercase(this.searchName))) {
+                    
+        //             this.contactsFiltered.push(this.contacts[i])
+        //         } 
+        //     }    
+        // },
     },
     mounted() {
 

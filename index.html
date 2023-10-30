@@ -53,7 +53,7 @@
                     <button class="chats-btn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat!"
+                    <input type="text" name="search-name" placeholder="Cerca o inizia una nuova chat!"
                     v-model="searchName">
                 </div>
                 <ul class="contacts-list" v-if="searchName !== ''">
@@ -134,7 +134,9 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="type-in-message-area">
-                        <input type="text" placeholder="Scrivi messaggio" v-model="newMessage.message"
+                        <input type="text" placeholder="Scrivi messaggio"
+                        name="chat" 
+                        v-model="newMessage.message"
                         @keyup.enter="sendNewMessage()"
                         >
                     </div>
